@@ -6,6 +6,7 @@ function init() {
 
     gl = WebGLUtils.setupWebGL( canvas );
     cone = new Cone (gl, n);
+    
     if ( !gl ) {
         alert("Unable to setup WebGL");
         return;
@@ -13,12 +14,12 @@ function init() {
 
     gl.clearColor( 1.0, 0.0, 1.0, 1.0 );
 
-    render();
+    cone.render();
 }
 
 function render() {
     gl.clear( gl.COLOR_BUFFER_BIT );
-    cone.render();
+    
 }
 
 window.onload = init;
