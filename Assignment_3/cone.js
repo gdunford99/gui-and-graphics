@@ -1,5 +1,6 @@
 var gl = null;
 var cone = null;
+var angle = 60;
 
 function init() {
     var canvas = document.getElementById( "webgl-canvas" );
@@ -18,7 +19,10 @@ function init() {
 }
 
 function render() {
-    cone.render();
+	
+   cone.render();
+	
+	
     //gl.clear( gl.COLOR_BUFFER_BIT );
     
 }
