@@ -41,7 +41,7 @@ function Cone( gl, numSides, vertexShaderId, fragmentShaderId ) {
         indices.push(n - i);
     }
 
-    positions.push( 0.0, 0.0, 1.0 );
+    positions.push( 0.0, 0.0, 0.0 );
     
     // Close the triangle fan by repeating the first (non-center) point.
     //
@@ -86,11 +86,11 @@ function Cone( gl, numSides, vertexShaderId, fragmentShaderId ) {
 
         // Draw the cone's base
         //
-        gl.drawElements( gl.TRIANGLE_FAN, this.indices.count, gl.UNSIGNED_SHORT, 0 );
-
+        gl.drawElements( gl.POINTS, this.indices.count, gl.UNSIGNED_SHORT, 0 );
+		
         // Draw the cone's top
         //
         var offset = this.indices.count * 2 /* sizeof(UNSIGNED_INT) */;
-        gl.drawElements( gl.LINES, this.indices.count, gl.UNSIGNED_SHORT, offset );
+        gl.drawElements( gl.POINTS, this.indices.count, gl.UNSIGNED_SHORT, offset );
     }
 };
